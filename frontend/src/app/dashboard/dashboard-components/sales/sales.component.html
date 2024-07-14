@@ -1,0 +1,34 @@
+<div class="dashboard">
+
+  <h1 class="title">Dashboard</h1>
+
+
+  <div class="summary-cards" >
+    <mat-card style="margin: 15px;" class="summary-card" *ngFor="let summary of summaries">
+      <mat-card-content >
+        <h4>{{ summary.title }}</h4>
+        <p>{{ summary.value }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div *ngFor="let alert of alerts$ | async" class="alert {{ alert.color }} d-flex fs-14 align-items-center rounded mb-16" role="alert">
+    <i-feather name="{{ alert.icon }}" class="{{ alert.iconColor }} feather-base me-12"></i-feather>
+    <div class="flex-grow-1">{{ alert.message }}</div>
+  </div>
+
+  <div class="charts">
+    <div id="areaChart">
+      <apx-chart [series]="areaChartOptions?.series" [chart]="areaChartOptions?.chart" [xaxis]="areaChartOptions?.xaxis" [title]="areaChartOptions?.title"></apx-chart>
+    </div>
+    <div id="heatmapChart">
+      <apx-chart [series]="heatmapChartOptions?.series" [chart]="heatmapChartOptions?.chart" [xaxis]="heatmapChartOptions?.xaxis" [title]="heatmapChartOptions?.title"></apx-chart>
+    </div>
+    <div id="pieChart">
+      <apx-chart [series]="pieChartOptions?.series" [chart]="pieChartOptions?.chart" [labels]="pieChartOptions?.labels" [title]="pieChartOptions?.title"></apx-chart>
+    </div>
+    <div id="radarChart">
+      <apx-chart [series]="radarChartOptions?.series" [chart]="radarChartOptions?.chart" [xaxis]="radarChartOptions?.xaxis" [title]="radarChartOptions?.title"></apx-chart>
+    </div>
+  </div>
+</div>

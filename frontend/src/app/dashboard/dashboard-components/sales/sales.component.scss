@@ -1,0 +1,41 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+
+  align-items: center;
+
+
+}
+.summary-cards {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+
+  margin: 15px;
+}
+
+.summary-card {
+  width: 30%;
+}
+
+
+
+.charts {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#inventoryChart, #salesTrendsChart, #modelDistributionChart, #inventoryTurnoverChart, #salesVolumeChart, #avgSalesPriceChart, #inventoryValueChart, #topSellingModelsChart, #salesGrowthChart, #lineChart, #areaChart, #columnChart, #barChart, #mixedChart, #rangeAreaChart, #timelineChart, #funnelChart, #candlestickChart, #boxplotChart, #bubbleChart, #scatterChart, #heatmapChart, #treemapChart, #slopeChart, #pieChart, #radialbarChart, #radarChart, #polarAreaChart {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+
+

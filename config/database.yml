@@ -1,0 +1,23 @@
+# config/database.yml
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: <%= ENV['DATABASE_HOST'] %>
+  port: <%= ENV['DATABASE_PORT'] %>
+  username: <%= ENV['DATABASE_USER'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  pool: 5
+
+development:
+  <<: *default
+  database: aldo_inventory_development
+
+test:
+  <<: *default
+  database: aldo_inventory_test
+
+production:
+  <<: *default
+  database: aldo_inventory_production
+  username: aldo_inventory
+  password: <%= ENV['ALDO_INVENTORY_DATABASE_PASSWORD'] %>
